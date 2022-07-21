@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Dự án TikTok F8
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Bài 1: Giới thiệu dự án tiktok
 
-## Available Scripts
+### Bài 2: Tạo dự án và đẩy lên github
 
-In the project directory, you can run:
+-   Tạo biến môi trường env để chạy một port khác
+-   Trong khóa này có hỗ trợ push code lên github với giao thức ssh
 
-### `npm start`
+### Bài 3: Cài đặt customize-cra
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   Thư viện này giúp ghi đè cấu hình của webpack
+-   Lên github của thằng này và đọc về nó
+-   Nếu muốn lưu các thư viện vào trong DevDependence thì chỉ cần thêm hậu tố -D hoặc sử dụng --save-dev
+-   Check phiên bản webpack: Vào trong file package.lock.json và search theo từ khóa
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Bài 4: Cài đặt babel-plugin-module-resolver
 
-### `npm test`
+-   Giúp import đường dẫn gọn gàng hơn, tránh dấu tương tự như: `./../`
+-   Trong bài này mình sẽ học được 2 thứ:
+    -   Cấu hình customize-cra
+    -   Cấu hình babel-plugin-module-resolver (Đọc docs của nó nha)
+-   Lưu ý: Khi cấu hình file JSON thì không được comment vào nó nha
+-   Cái file `config-overrides.js` bản chất trong đó có cái overrides chính là babel </br>
+    được ẩn trong create react app, nó sẽ lấy cái đó và return ra => create react app sẽ </br>
+    đọc được file `babelrc`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Bài 5: Cài đặt và cấu hình Prettier (Google có)
 
-### `npm run build`
+### Bài 6: Cấu hình sử dụng CSS/SASS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   Cài thư viện sass ở --dev: `npm install sass --save-dev` hoặc `npm install sass -D`
+-   Sau đó nhớ start lại app nhá
+-   Sử dụng thư viện để reset css(Thư viện normalize.css npm)
+    -   Cú pháp cài đặt trong npm: `npm install --save normalize.css`
+-   Set default Css cho nó: font-size, line-height, font family
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Bài 7: Cấu hình Router/Layout cho dự án
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Phân tích tổng quan layout
 
-### `npm run eject`
+-   Nếu không làm trên bản thiết kế thì có thể thay đổi qua các trang của web, và xem bố cục nó có khác nhau hay không
+-
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Cài đặt react-router-dom: `npm i react-router-dom`
+3. Đưa cấu hình routes ra ngoài
+4. Xây dựng cơ chế tải Layout
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   publicRoutes: Không cần đăng nhập vẫn xem được
+-   privateRoutes: Phải đăng nhập mới xem được
+-   Khi xây dựng cơ chế tải Layout thì ta sẽ tìm những phần mà khi di chuyển TAB, những thành phần đó tĩnh(Không đổi) để tạo Layout
+-   Nếu trong trường hợp cần nested routing thì cần làm như sau:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```js
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+const publicRoutes = [
+    {
+        path: "/",
+        index: true,
+        element: <Home />,
+        children: [
+            {
+                path: "profile",
+                element: <Profile />,
+            },
+        ],
+    },
+    {
+        path: "/following",
+        element: <Following />,
+    },
+];
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+const App = () => {
+    return (
+        <Routes>
+            {publicRoutes.map((route, index) => (
+                <Route key={index} {...route}>
+                    {route.children &&
+                        route.map((children, indexChildren) => (
+                            <Route key={indexChildren} {...children} />
+                        ))}
+                </Route>
+            ))}
+        </Routes>
+    );
+};
 
-## Learn More
+export default App;
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Tips
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   Muốn Wrap một nội dung nào đó nhanh thì sử dụng `Ctr + Shift + P` sau đó gõ component Wrap
+-   Hoặc sử dụng htmlagwrap extention
