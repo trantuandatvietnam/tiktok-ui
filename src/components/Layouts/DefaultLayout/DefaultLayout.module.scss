@@ -1,0 +1,19 @@
+.wrapper {
+    width: 100%;
+}
+
+.content {
+    flex: 1;
+}
+
+.container {
+    display: flex;
+    gap: 0 60px;
+    max-width: 100%;
+    width: var(
+        --default-layout-width,
+        60px
+    ); // Nếu không có biến thì mặc định là 60px
+    min-height: 1000px;
+    margin: 0 auto;
+}

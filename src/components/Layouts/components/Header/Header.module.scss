@@ -1,0 +1,108 @@
+.red-color {
+    color: blue;
+}
+
+.wrapper {
+    --search-width: 361px;
+    --search-height: 46px;
+    --input-color: #7d7d7d;
+    --search-background: rgba(22, 24, 35, 0.06);
+    --search-border-radius: 92px;
+    --search-btn-width: 52px;
+    height: 60px;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+}
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    max-width: 1150px;
+    padding: 0 24px 0 20px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.search,
+.search-result {
+    width: var(--search-width, 361px);
+}
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: var(--search-height, 46px);
+    padding-left: 16px;
+    border-radius: var(--search-border-radius);
+    background-color: var(--search-background);
+    border: 1.5px solid transparent;
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+
+    input {
+        flex: 1;
+        height: 100%;
+        font-size: 1.6rem;
+        caret-color: var(--primary-color);
+        color: var(--input-color);
+    }
+
+    input:not(:placeholder-shown) ~ &-btn {
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    &-btn {
+        position: relative;
+        width: var(--search-btn-width);
+        height: 100%;
+        font-size: 1.8rem;
+        color: rgba(22, 24, 35, 0.5);
+        border-top-right-radius: var(--search-border-radius);
+        border-bottom-right-radius: var(--search-border-radius);
+        cursor: pointer;
+    }
+
+    &-title {
+        padding: 5px 12px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: rgba(22, 24, 35, 0.5);
+    }
+
+    &-btn:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    &-btn:active {
+        background: rgba(22, 24, 35, 0.06);
+    }
+
+    &-btn::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 28px;
+        background-color: var(--input-color);
+        left: -1px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.5;
+    }
+
+    & .clear,
+    & .loading {
+        position: absolute;
+        color: rgba(22, 24, 35, 0.34);
+        right: calc(var(--search-btn-width) + 12px);
+        cursor: pointer;
+    }
+}

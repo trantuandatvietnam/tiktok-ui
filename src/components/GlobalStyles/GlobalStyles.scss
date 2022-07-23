@@ -1,7 +1,20 @@
-@import "variables";
 @import "normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600;1,700&display=swap");
+// Variables
+:root {
+    --primary-color: #fe2c55;
+    --text-color: #333;
+    --white-color: #fff;
+    --check-icon-color: rgb(32, 213, 236);
+    // Default layout
+    --default-layout-header-height: 60px;
+    --default-layout-width: 1150px;
+    --default-layout-sidebar-width: 356px;
+}
+// Reset Css
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -10,9 +23,21 @@ html {
 }
 
 body {
-    color: $black-color;
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed; // Tối ưu tốc độ font chữ sao cho hiển thị nhanh nhất
+}
+
+button,
+input,
+[tabindex] {
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
 }

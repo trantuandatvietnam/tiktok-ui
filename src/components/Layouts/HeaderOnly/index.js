@@ -1,17 +1,15 @@
 import React from "react";
-import Header from "./Header";
-import SideBarLeft from "./SideBarLeft.js";
+import Header from "../components/Header";
 
-const DefaultLayout = ({ children }) => {
+const HeaderOnly = ({ children }) => {
     return (
         <div>
             <Header />
             <div className="container">
-                <SideBarLeft />
                 <div className="content">{children}</div>
             </div>
         </div>
     );
 };
 
-export default DefaultLayout;
+export default HeaderOnly;
