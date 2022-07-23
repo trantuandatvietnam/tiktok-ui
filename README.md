@@ -161,6 +161,18 @@ export const publicRoutes = [
 -   Sử dụng thư viện tippyjs (Search tippyjs sau đó click vào phần react nhá) `npm i @tippyjs/react`
     -   Dùng làm tooltip hoặc sử dụng làm các dropdown
 
+### Xây dựng UI phần Header(Phần 3)
+
+-   Xấy dựng Component Button + Một component Button có thể là một thẻ a (Khi click sẽ đưa ra một link bên ngoài) </br>
+    hoặc nó cũng có thể là thẻ Link của react-router-dom (Khi Click sẽ dẫn đến link nội bộ của trang web đó)
+
+=> Cần xấy dựng sao cho component này linh hoạt trong mọi tình huống
+
+-   Khi muốn một thẻ a hoặc Link khi nhấn vào sẽ mở đường dẫn trong một tab mới thì ta có thể </br>
+    thêm cho nó thuộc tính target="\_blank"
+
+### Xây dựng UI phần Header(Phần 4)
+
 ### Tips
 
 -   Muốn Wrap một nội dung nào đó nhanh thì sử dụng `Ctr + Shift + P` sau đó gõ component Wrap
@@ -190,16 +202,10 @@ setTimeout(() => {
 }, 3000);
 ```
 
-### Xây dựng UI phần Header(Phần 3)
-
--   Xấy dựng Component Button + Một component Button có thể là một thẻ a (Khi click sẽ đưa ra một link bên ngoài) </br>
-    hoặc nó cũng có thể là thẻ Link của react-router-dom (Khi Click sẽ dẫn đến link nội bộ của trang web đó)
-
-=> Cần xấy dựng sao cho component này linh hoạt trong mọi tình huống
-
--   Khi muốn một thẻ a hoặc Link khi nhấn vào sẽ mở đường dẫn trong một tab mới thì ta có thể </br>
-    thêm cho nó thuộc tính target="\_blank"
-
 -   Khi sử dụng border-radius (Muốn nó bo cong nhất có thể) theo đơn vị "%" thì box sẽ bị méo </br>
     (Trừ trường hợp chiều ngang bằng chiều cao) => Để xử lí tình huống này thì chỉ cần xét cho nó </br>
     theo đơn vị `px` (VD: 999px), như vậy là nó sẽ bo cong nhất có thể mà không bị méo
+
+-   Khi sử dụng từ khóa `const` để khai báo một biến gì đó cố định (Không thay đổi) thì </br>
+    người ta thường viết hoa biến đó lên
+-   Nếu CSS ở component khác ăn vào CSS ở component này thì ta có thể thử bằng cách bao bọc nó bởi một thẻ nào đó, rồi CSS thêm thông qua thẻ đó

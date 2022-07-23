@@ -3,6 +3,12 @@
     margin-left: 8px;
 }
 
+.icon {
+    display: flex;
+    justify-content: flex-start;
+    min-width: 20px;
+}
+
 .wrapper {
     display: inline-flex;
     justify-content: center;
