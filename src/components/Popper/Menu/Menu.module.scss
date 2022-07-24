@@ -22,3 +22,28 @@
 .menu-popper {
     padding-bottom: 8px;
 }
+
+// Menu Header
+
+.header {
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -8px;
+}
+
+.back-btn {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.header-title {
+    font-weight: 600;
+}

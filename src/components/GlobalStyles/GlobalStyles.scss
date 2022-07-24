@@ -1,5 +1,30 @@
 @import "normalize.css";
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600;1,700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600;1,700&display=swap");
+// Emmbeded fonts
+@font-face {
+    font-family: "ProximaNova";
+    src: url("/assets/fonts/Proxima-Nova-Semibold.woff2");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "ProximaNova";
+    src: url("/assets/fonts/Proxima-Nova-Regular.woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "ProximaNova";
+    src: url("/assets/fonts/zYX9KVElMYYaJe8bpLHnCwDKjWr7AI9sdO_q.woff2");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "ProximaNova";
+    src: url("/assets/fonts/zYX9KVElMYYaJe8bpLHnCwDKjWr7AI5sdO_q.woff2");
+    font-weight: 300;
+}
+
 // Variables
 :root {
     --primary-color: #fe2c55;
@@ -10,6 +35,7 @@
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --default-layout-sidebar-width: 356px;
+    --default-layout-horizontal-spacer: 24px;
 }
 // Reset Css
 * {
@@ -23,7 +49,8 @@ html {
 }
 
 body {
-    font-family: "IBM Plex Sans", sans-serif;
+    // font-family: "IBM Plex Sans", sans-serif;
+    font-family: "ProximaNovaBold", sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed; // Tối ưu tốc độ font chữ sao cho hiển thị nhanh nhất
@@ -40,4 +67,24 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+// Custom Tippy box
+body {
+    .tippy-box {
+        padding: 8px;
+        border-radius: 10px;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-content {
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--white-color);
+        padding: 0;
+    }
+
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
 }

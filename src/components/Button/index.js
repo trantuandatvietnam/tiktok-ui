@@ -17,6 +17,7 @@ const Button = ({
     className,
     leftIcon,
     rightIcon,
+    separate = false,
     onClick,
     ...passProps
 }) => {
@@ -51,8 +52,9 @@ const Button = ({
         outline,
         disabled,
         rounded,
-        [size]: size,
         text,
+        separate,
+        [size]: size,
         [className]: className,
     });
     return (

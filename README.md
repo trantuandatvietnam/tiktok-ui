@@ -222,3 +222,5 @@ setTimeout(() => {
 
 -   Xem tất cả thuộc tính của một khối thì bấm sang tab computer
 -   Convert bất kì kiểu dữ liệu gì sang children: Thêm `!!` vào trước nó
+-   Để lấy được `font` của một trang web thì ta bật F12 rôi vào tab network, </br>
+    sau đó chọn vào font rồi F5 lại trang (Chuột phải vào font muốn tạo, sau đó `open new tab`)
