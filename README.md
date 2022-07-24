@@ -173,7 +173,17 @@ export const publicRoutes = [
 
 ### Xây dựng UI phần Header(Phần 4)
 
+### Xây dựng UI phần Header(Phần 5)
+
+### Xây dựng UI phần Header(Phần 6)
+
 ### Tips
+
+-   Phương pháp học một công nghệ mới:
+
+*   Bước 1: Xem toturial trên mạng kèm đọc docs trên trang chủ của nó
+*   Bước 2: Làm project ứng dụng
+*   Bước 3: Tìm hiểu sâu (Nếu cần)
 
 -   Muốn Wrap một nội dung nào đó nhanh thì sử dụng `Ctr + Shift + P` sau đó gõ component Wrap
 -   Hoặc sử dụng htmlagwrap extention
@@ -209,3 +219,6 @@ setTimeout(() => {
 -   Khi sử dụng từ khóa `const` để khai báo một biến gì đó cố định (Không thay đổi) thì </br>
     người ta thường viết hoa biến đó lên
 -   Nếu CSS ở component khác ăn vào CSS ở component này thì ta có thể thử bằng cách bao bọc nó bởi một thẻ nào đó, rồi CSS thêm thông qua thẻ đó
+
+-   Xem tất cả thuộc tính của một khối thì bấm sang tab computer
+-   Convert bất kì kiểu dữ liệu gì sang children: Thêm `!!` vào trước nó
