@@ -177,6 +177,19 @@ export const publicRoutes = [
 
 ### Xây dựng UI phần Header(Phần 6)
 
+### Xây dựng Logic phần Header(Phần 1)
+
+### Xây dựng Logic phần Header(Phần 2)
+
+-   API search
+    `https://tiktok.fullstack.edu.vn/api/users/search?q=hoaa&type=less`
+-   Cấu trúc cúa một URL:
+    -   Giao thức
+    -   Hostname
+    -   path (/api...), đăng sau `?` là query parameter
+-   Cái `type` trong đường dẫn trên là do bên backend cung cấp, (less chỉ nhận tối đa 5 kết quả trả về, more sẽ nhận tối đa 10 kết quả trả về).
+-   Tại sao nên sử dụng debounce trong trường hợp này? Lý do là vì khi thay đổi, nhập dữ liệu liên tục vào ô input thì api sẽ call liên tục, vì thế có thể xảy ra tình trạng trả về sai kết quả tìm kiếm (bằng cách nào đó api cuối cùng được gọi lại chạy xong trước api đầu tiên => Gây ra lỗi)
+
 ### Tips
 
 -   Phương pháp học một công nghệ mới:
@@ -224,3 +237,16 @@ setTimeout(() => {
 -   Convert bất kì kiểu dữ liệu gì sang children: Thêm `!!` vào trước nó
 -   Để lấy được `font` của một trang web thì ta bật F12 rôi vào tab network, </br>
     sau đó chọn vào font rồi F5 lại trang (Chuột phải vào font muốn tạo, sau đó `open new tab`)
+
+-   Khi ta viết một logic nào đó có tính chất setState lại nhiều lần thì nên cân nhắc việc </br>
+    tách nó ra thành một component riêng và xử lí logic bên trong nó để tránh re-render lại </br>
+    những thành phần không cần thiết => Tối ưu hiệu năng
+
+-   Giả sử có API sau: `https://tiktok.fullstack.edu.vn/api/users/search?q=${searchValues}&type=less`
+    Nếu người dùng nhập vào một kí tự như `% $ &` thì nó sẽ trùng với kí tự của API và gặp lỗi
+
+=> Fix bằng cách sử dụng `encodeURIComponent(searchValues)` để mã hóa nó thành một kí tự hợp lệ trên URL
+
+Vì vậy khi cố tình nhập `#` thì nó sẽ hiện như sau: `https://tiktok.fullstack.edu.vn/api/users/search?q=%26&type=less`
+
+-   Lưu ý rằng nếu CSS cho một class cùng một thuộc tính thì nó sẽ bị ghi đè
