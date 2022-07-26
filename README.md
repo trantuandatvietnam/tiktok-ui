@@ -190,6 +190,12 @@ export const publicRoutes = [
 -   Cái `type` trong đường dẫn trên là do bên backend cung cấp, (less chỉ nhận tối đa 5 kết quả trả về, more sẽ nhận tối đa 10 kết quả trả về).
 -   Tại sao nên sử dụng debounce trong trường hợp này? Lý do là vì khi thay đổi, nhập dữ liệu liên tục vào ô input thì api sẽ call liên tục, vì thế có thể xảy ra tình trạng trả về sai kết quả tìm kiếm (bằng cách nào đó api cuối cùng được gọi lại chạy xong trước api đầu tiên => Gây ra lỗi)
 
+### Tìm hiểu và sử dụng thư viện Axios
+
+-   Thư viện giúp gọi API
+-   Khi sử dụng các phương thức truyền params qua một object thì không phải sử dụng encodeURIComponent nữa
+-   Sau này nếu làm dự án lớn thì có thể có nhiều baseURL thì lúc đó muốn sử dụng URL nào thì gửi sử dụng axios (instance) đó
+
 ### Tips
 
 -   Phương pháp học một công nghệ mới:
@@ -250,3 +256,4 @@ setTimeout(() => {
 Vì vậy khi cố tình nhập `#` thì nó sẽ hiện như sau: `https://tiktok.fullstack.edu.vn/api/users/search?q=%26&type=less`
 
 -   Lưu ý rằng nếu CSS cho một class cùng một thuộc tính thì nó sẽ bị ghi đè
+-   Lưu ý hàm setState(value) thì giá trị value chỉ được sử dụng lần đầu khi component mount thôi nha (Nếu value được truyền vào từ một hàm khác)
