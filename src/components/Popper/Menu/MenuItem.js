@@ -22,6 +22,6 @@ const MenuItem = ({ data, onClick }) => {
 
 Button.propTypes = {
     onClick: PropTypes.func,
-    data: PropTypes.object.isRequired,
+    data: PropTypes.object,
 };
 export default MenuItem;
