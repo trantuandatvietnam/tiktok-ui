@@ -1,5 +1,8 @@
 // Layout
-import { HeaderOnly } from "~/components/Layouts";
+import { HeaderOnly } from "~/layouts";
+
+// routes config
+import config from "~/config";
 
 // Pages
 import Following from "~/pages/Following";
@@ -11,24 +14,24 @@ import Upload from "~/pages/Upload";
 // publicRoutes: Không cần đăng nhập vẫn xem được
 const publicRoutes = [
     {
-        path: "/",
+        path: config.routesConfig.home,
         component: Home,
     },
     {
-        path: "/following",
+        path: config.routesConfig.following,
         component: Following,
     },
     {
-        path: "/@:nickname",
+        path: config.routesConfig.profile,
         component: Profile,
     },
     {
-        path: "/upload",
+        path: config.routesConfig.upload,
         component: Upload,
         layout: HeaderOnly,
     },
     {
-        path: "/search",
+        path: config.routesConfig.search,
         component: Search,
         layout: null,
     },

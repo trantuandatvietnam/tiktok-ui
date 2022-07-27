@@ -1,9 +1,10 @@
 import React, { forwardRef } from "react";
+import PropTypes from "prop-types";
 import images from "~/assets/imgs";
 import classNames from "classnames";
 import styles from "./Image.module.scss";
 
-const Image = ({ alt, className, fallback, ...props }, ref) => {
+const Image = forwardRef(({ alt, className, fallback, ...props }, ref) => {
     return (
         <img
             className={classNames(styles.wrapper, className)}
@@ -13,6 +14,12 @@ const Image = ({ alt, className, fallback, ...props }, ref) => {
             alt={alt}
         />
     );
+});
+
+Image.propTypes = {
+    alt: PropTypes.string,
+    className: PropTypes.string,
+    fallback: PropTypes.string,
 };
 
-export default forwardRef(Image);
+export default Image;

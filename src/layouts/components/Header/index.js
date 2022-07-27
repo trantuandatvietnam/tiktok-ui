@@ -11,6 +11,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tippy from "@tippyjs/react";
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 import "tippy.js/dist/tippy.css";
 import images from "~/assets/imgs";
 import Button from "~/components/Button";
@@ -19,6 +20,8 @@ import Image from "~/components/Image";
 import Menu from "~/components/Popper/Menu";
 import Search from "../Search";
 import styles from "./Header.module.scss";
+// routes config
+import config from "~/config";
 
 const cx = classNames.bind(styles);
 
@@ -68,10 +71,6 @@ const userMenu = [
         title: "Cài đặt",
         to: "/settings",
     },
-    {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        title: "Tiếng Việt",
-    },
     ...MENU_ITEMS,
     {
         icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
@@ -89,9 +88,9 @@ const Header = () => {
     return (
         <header className={cx("wrapper")}>
             <div className={cx("inner")}>
-                <div className={cx("logo")}>
+                <Link to={config.routesConfig.home} className={cx("logo")}>
                     <Image src={images.logo} alt="logo" />
-                </div>
+                </Link>
                 <Search />
                 {/* Actions */}
                 <div className={cx("actions")}>

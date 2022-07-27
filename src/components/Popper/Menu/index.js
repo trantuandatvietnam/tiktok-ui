@@ -5,11 +5,18 @@ import styles from "./Menu.module.scss";
 import Tippy from "@tippyjs/react/headless";
 import MenuItem from "./MenuItem";
 import Header from "./Header";
+import PropTypes from "prop-types";
 
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
-const Menu = ({ children, items = [], onChange = defaultFn }) => {
+const Menu = ({
+    children,
+    items = [],
+    onChange = defaultFn,
+    hideOnClick = false,
+    ...passProps
+}) => {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
     const renderItems = () => {
@@ -40,6 +47,8 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
             interactive
             delay={[100, 500]}
             placement="bottom-end"
+            hideOnClick={hideOnClick}
+            {...passProps}
             render={(attrs) => (
                 <div {...attrs} className={cx("menu-list")}>
                     <PopperWrapper className={cx("menu-popper")}>
@@ -53,7 +62,7 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
                                 title={current.title}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx("menu-body")}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}
@@ -61,6 +70,13 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
             {children}
         </Tippy>
     );
+};
+
+Menu.propTypes = {
+    children: PropTypes.node.isRequired,
+    hideOnClick: PropTypes.bool,
+    items: PropTypes.array,
+    onChange: PropTypes.func,
 };
 
 export default Menu;

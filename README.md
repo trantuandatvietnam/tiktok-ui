@@ -196,6 +196,10 @@ export const publicRoutes = [
 -   Khi sử dụng các phương thức truyền params qua một object thì không phải sử dụng encodeURIComponent nữa
 -   Sau này nếu làm dự án lớn thì có thể có nhiều baseURL thì lúc đó muốn sử dụng URL nào thì gửi sử dụng axios (instance) đó
 
+### Tìm hiểu thư viện PropTypes
+
+-   `instanceof` kiểm tra một giá trị có phải là thể hiện của một kiểu
+
 ### Tips
 
 -   Phương pháp học một công nghệ mới:
@@ -204,7 +208,7 @@ export const publicRoutes = [
 *   Bước 2: Làm project ứng dụng
 *   Bước 3: Tìm hiểu sâu (Nếu cần)
 
--   Muốn Wrap một nội dung nào đó nhanh thì sử dụng `Ctr + Shift + P` sau đó gõ component Wrap
+-   Muốn Wrap một nội dung nào đó nhanh thì sử dụng `Alt + W` sau đó gõ component Wrap (Càn cài extension htmltagwrap)
 -   Hoặc sử dụng htmlagwrap extention
 -   Khi một thao tác bị buộc phải lặp đi lặp lại nhiều lần thì mình nền tạo một cái template để sau coppy cho tiện
 -   Khi coppy một thẻ svg mà không dùng được thì ta coppy cái id bên trong nó và search ở dev tools để lấy một cái khác
@@ -257,3 +261,21 @@ Vì vậy khi cố tình nhập `#` thì nó sẽ hiện như sau: `https://tikt
 
 -   Lưu ý rằng nếu CSS cho một class cùng một thuộc tính thì nó sẽ bị ghi đè
 -   Lưu ý hàm setState(value) thì giá trị value chỉ được sử dụng lần đầu khi component mount thôi nha (Nếu value được truyền vào từ một hàm khác)
+-   Nên cố gắng không hashCode (VD từng tuyến đường thì nên tách ra file riêng)
+
+-   Khi CSS chiều dài cho thẻ cha nhưng không css cho thẻ con thì thẻ cha chỉ cần sử dụng display: flex là thẻ con nó sẽ ăn theo
+
+-   Nếu viết kiểu này: `export { default, default as DefaultLayout } from "./DefaultLayout";` </br>
+    thì bên kia có thể `import DefaultLayout from "~/layouts";` hoặc `import {DefaultLayout} from "~/layouts";`
+
+-   Quy tắc đặt file env
+
+    -   Khi chỉ muốn một mình mình biêt: .env.local
+    -   Khi muốn share chung giữa các thành viên code với nhau: .env.development
+    -   Trên production: .env.production
+    -   Đối với mỗi môi trường nó sẽ ưu tiên lấy cấu hình của file đó (Trong trường hợp nó có cả </br> `.env` và `.env.production` thì nó sẽ ưu tiên sử dụng môi trường cụ thể là production)
+
+-   Giả sử trong trường hợp muốn một chức năng chỉ hiện trên môi trường nhất định thì ta có thể sử dụng biến env.NODE_ENV để kiểm tra (Thử log file process.env ra là thấy)
+
+-   Sử dụng `Ctr + Alt + Mũi tên xuống` để tạo ra nhiều trỏ chuột theo hàng dọc
+-   Nếu muốn một component chỉ được nhận một children thì thay vì `return children` luôn thì ta `return React.children.only(children)`

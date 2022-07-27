@@ -18,6 +18,7 @@
     border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
+    font-family: var(--font-family);
 
     & + .wrapper {
         margin-left: 8px;

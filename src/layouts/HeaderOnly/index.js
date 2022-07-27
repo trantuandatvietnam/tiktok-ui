@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import PropTypes from "prop-types";
 
 const HeaderOnly = ({ children }) => {
     return (
@@ -12,4 +13,7 @@ const HeaderOnly = ({ children }) => {
     );
 };
 
+HeaderOnly.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 export default HeaderOnly;

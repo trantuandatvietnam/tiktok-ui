@@ -27,6 +27,7 @@
 
 .header {
     position: relative;
+    flex-shrink: 0;
     height: 50px;
     display: flex;
     align-items: center;
@@ -46,4 +47,8 @@
 
 .header-title {
     font-weight: 600;
+}
+
+.menu-body {
+    overflow-y: auto;
 }

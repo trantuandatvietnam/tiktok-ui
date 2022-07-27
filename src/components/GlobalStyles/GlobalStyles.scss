@@ -27,6 +27,7 @@
 
 // Variables
 :root {
+    --font-family: "ProximaNovaBold", sans-serif;
     --primary-color: #fe2c55;
     --text-color: #333;
     --white-color: #fff;
@@ -50,7 +51,7 @@ html {
 
 body {
     // font-family: "IBM Plex Sans", sans-serif;
-    font-family: "ProximaNovaBold", sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed; // Tối ưu tốc độ font chữ sao cho hiển thị nhanh nhất
@@ -71,6 +72,7 @@ a[href] {
 
 // Custom Tippy box
 body {
+    overflow-y: overlay;
     .tippy-box {
         padding: 8px;
         border-radius: 10px;
@@ -87,4 +89,21 @@ body {
     .tippy-arrow {
         color: rgba(84, 84, 84, 0.92);
     }
+}
+
+// Custom scrollbar
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
 }
