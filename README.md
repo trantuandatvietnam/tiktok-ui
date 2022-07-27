@@ -200,6 +200,8 @@ export const publicRoutes = [
 
 -   `instanceof` kiểm tra một giá trị có phải là thể hiện của một kiểu
 
+### Khắc phục nhiều file index
+
 ### Tips
 
 -   Phương pháp học một công nghệ mới:
