@@ -281,3 +281,5 @@ Vì vậy khi cố tình nhập `#` thì nó sẽ hiện như sau: `https://tikt
 
 -   Sử dụng `Ctr + Alt + Mũi tên xuống` để tạo ra nhiều trỏ chuột theo hàng dọc
 -   Nếu muốn một component chỉ được nhận một children thì thay vì `return children` luôn thì ta `return React.children.only(children)`
+
+-   Những hàm trong một sự kiện `on...` thì được đặt tên bắt dầu bằng `handle`
