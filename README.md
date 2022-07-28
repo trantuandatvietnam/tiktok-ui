@@ -202,6 +202,8 @@ export const publicRoutes = [
 
 ### Khắc phục nhiều file index
 
+### Xây dựng UI phần sidebar
+
 ### Tips
 
 -   Phương pháp học một công nghệ mới:
