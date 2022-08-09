@@ -1,0 +1,43 @@
+.menu {
+    margin-bottom: 8px;
+
+    &-item {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border-radius: 4px;
+        transition: background-color 0.2s linear;
+    }
+
+    // Active NavLink
+
+    &-item:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.active-icon {
+    display: none;
+}
+
+.icon {
+    display: flex;
+}
+
+.menu .isActive {
+    color: var(--primary-color);
+    .icon {
+        display: none;
+    }
+    .active-icon {
+        display: flex;
+    }
+}
+
+.title {
+    font-size: 1.8rem;
+    line-height: 25px;
+    font-weight: 700;
+    margin-left: 8px;
+    color: currentColor;
+}

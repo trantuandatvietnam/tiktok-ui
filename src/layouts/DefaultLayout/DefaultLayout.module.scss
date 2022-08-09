@@ -14,6 +14,5 @@
         60px
     ); // Nếu không có biến thì mặc định là 60px
     gap: 0 60px;
-    padding: 0 var(--default-layout-horizontal-spacer);
     margin: var(--default-layout-header-height) auto 0 auto;
 }

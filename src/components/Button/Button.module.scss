@@ -32,7 +32,7 @@
 }
 
 // Button types
-.rounded {
+.wrapper.rounded {
     border-color: rgba(22, 24, 35, 0.12);
     border-radius: 52px;
     box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
@@ -43,7 +43,7 @@
     }
 }
 
-.primary {
+.wrapper.primary {
     background-color: var(--primary-color);
     color: var(--white-color);
     border-color: var(--primary-color);
@@ -58,7 +58,7 @@
     }
 }
 
-.outline {
+.wrapper.outline {
     border-color: currentColor;
     color: var(--primary-color);
     &:hover {
@@ -66,28 +66,28 @@
     }
 }
 
-.text {
+.wrapper.text {
     &:hover {
         text-decoration: underline;
     }
 }
 
 // Button sizes
-.md {
+.wrapper.md {
     min-width: 100px;
     padding: 8px 16px;
 }
 
-.sm {
+.wrapper.sm {
     min-width: 88px;
     padding: 4px 16px;
 }
 
-.lg {
+.wrapper.lg {
     padding: 14px 16px;
     min-width: 140px;
 }
 
-.separate {
+.wrapper.separate {
     border-top: 1px solid rgba(22, 24, 35, 0.12);
 }
