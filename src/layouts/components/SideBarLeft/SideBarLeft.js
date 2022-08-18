@@ -12,6 +12,7 @@ import {
     LiveIcon,
     LiveIconActive,
 } from "~/components/Icons";
+import SuggestedAccounts from "~/components/SuggestedAccounts";
 
 const cx = classNames.bind(styles);
 const SideBarLeft = () => {
@@ -37,6 +38,7 @@ const SideBarLeft = () => {
                     to={config.routesConfig.live}
                 />
             </Menu>
+            <SuggestedAccounts label="Tài khoản được đề xuất" />
         </aside>
     );
 };

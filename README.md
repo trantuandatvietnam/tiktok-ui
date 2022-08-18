@@ -285,3 +285,17 @@ Vì vậy khi cố tình nhập `#` thì nó sẽ hiện như sau: `https://tikt
 -   Nếu muốn một component chỉ được nhận một children thì thay vì `return children` luôn thì ta `return React.children.only(children)`
 
 -   Những hàm trong một sự kiện `on...` thì được đặt tên bắt dầu bằng `handle`
+-   Nguyên tắc tạo một component: Một component không nên thực hiện để render ra một component khác TƯƠNG TỰ (nhưng khác nhau về mặt ngữ nghĩa)
+-   Thứ tự import trong một component nên như sau:
+
+    -   Ưu tiên External (Những thư viện cài từ bên ngoài)
+    -   Sau đó đến Internal (Nhưng file trong dự án)
+    -   Trình bày cách nhau một dòng
+
+-   SEO (Search Engine Optimization - Tối ưu hóa công cụ tìm kiếm)
+
+    -   Google hay những công cụ tìm kiếm nó sẽ ưu tiên những thẻ h, trong đó nó sẽ ưu tiên thẻ h1 nhất sau đó thấp dần xuống h6
+
+-   Lưu ý: Mã màu thập lục phân nếu có 8 chữ số thì 2 chữ số cuối cùng thể hiện độ opacity: VD: `color: #161823bf`
+
+-   `line-height` khi không chỉ định rõ theo đơn vị thì nó là theo tỉ lệ (Lấy đơn vị line-height theo px chia cho font-size thì nó sẽ ra tỉ lệ)
