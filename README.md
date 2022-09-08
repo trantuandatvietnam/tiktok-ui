@@ -19,8 +19,8 @@
 -   Giúp import đường dẫn gọn gàng hơn, tránh dấu tương tự như: `./../`
 -   Trong bài này mình sẽ học được 2 thứ:
     -   Cấu hình customize-cra
-    -   Cấu hình babel-plugin-module-resolver (Đọc docs của nó nha)
--   Lưu ý: Khi cấu hình file JSON thì không được comment vào nó nha
+    -   Cấu hình babel-plugin-module-resolver (Đọc docs của nó nhé)
+-   Lưu ý: Khi cấu hình file JSON thì không được comment vào nó nhé
 -   Cái file `config-overrides.js` bản chất trong đó có cái overrides chính là babel </br>
     được ẩn trong create react app, nó sẽ lấy cái đó và return ra => create react app sẽ </br>
     đọc được file `babelrc`
